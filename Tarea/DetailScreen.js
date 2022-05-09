@@ -1,8 +1,9 @@
 import React from 'react';
-import {Button, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 import styles from "../styles"
+import NavigationButtons from './NavigationButtons';
 
-function DetailScreen({route, navigation}) {
+function DetailScreen({route}) {
     const {id, description} = route.params;
 
     return (
@@ -11,16 +12,7 @@ function DetailScreen({route, navigation}) {
                 <Text style={{alignSelf:"center", fontSize:40}}>Tarea {id}</Text>
                 <Text>{description}</Text>
             </View>
-            <View style={styles.footer}>
-                <Button 
-                    title="Atras"
-                    onPress={() => navigation.goBack()}
-                />
-                <Button 
-                    title="Home"
-                    onPress={() => navigation.navigate('Home')}
-                />
-            </View>
+            <NavigationButtons/>
         </View>
     );
 }

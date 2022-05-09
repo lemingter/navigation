@@ -1,37 +1,26 @@
 import React from 'react';
 import Box from './Box';
-import {View, Button} from 'react-native';
+import {View} from 'react-native';
 import styles from '../styles';
+import NavigationButtons from './NavigationButtons';
+import task from '../data/task'
 
-function Menu({navigation}) {
-    const boxes = new Array(10).fill(null).map((value, i) => i + 1);
+function Menu() {
     return (
         <View style={styles.containerDetails}>
             <View style={styles.containerBoxes}>
                 {
-                    boxes.map(value => (
-                        <Box key = {value}>Tarea {value}
-                        <Button
-                            title="Detalle" 
-                            onPress={() => navigation.navigate('Details', {
-                                id: value,
-                                description: "Descripcion de la tarea " + value,
-                        })}/>
-                        </Box>
+                    task.map((task, i) => (
+                        <Box 
+                            key = {i}
+                            id={task.id}
+                            description={task.description}
+                        />
                     ))
                 }
             </View>
 
-            <View style={styles.footer}>
-                <Button 
-                    title="Atras"
-                    onPress={() => navigation.goBack()}
-                />
-                <Button 
-                    title="Home"
-                    onPress={() => navigation.navigate('Home')}
-                />
-            </View>
+            <NavigationButtons/>
             
         </View>
     );
