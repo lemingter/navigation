@@ -3,6 +3,20 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
         flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#43a047"
+    },
+
+    containerDetails: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "space-between",
+        backgroundColor: "#43a047",
+    },
+
+    containerBoxes: {
+        flex: 1,
         flexWrap: 'wrap',
         flexDirection: "row",
         alignItems: 'center',
@@ -11,6 +25,11 @@ export default StyleSheet.create({
 
     text: {
         marginBottom: 10,
+        fontSize: 40,
+    },
+
+    textDetails: {
+        marginTop: 20
     },
 
     box: {
@@ -20,7 +39,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         //alignSelf: 'stretch',
         borderWidth: 1,
-        backgroundColor: 'lightgray',
+        backgroundColor: '#4dd0e1',
         margin: 10,
     },
 
@@ -28,4 +47,15 @@ export default StyleSheet.create({
         color: "darkslategray",
         fontWeight: "bold",
     },
+
+    footer: {
+        justifyContent: 'space-evenly',
+        flex: 0,
+        backgroundColor: "#00701a",
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignSelf: 'flex-end',
+        width: 400,
+        height: 50,
+      },
 })
